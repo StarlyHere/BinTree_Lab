@@ -7,15 +7,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Binary Tree Visualizer</h1>
-  
-  <div class="controls">
-    <input type="number" id="nodeValue" placeholder="Enter node value">
-    <button onclick="addNode()">Add Node</button>
-    <button onclick="clearTree()">Clear Tree</button>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <span class="terminal-button close"></span>
+        <span class="terminal-button minimize"></span>
+        <span class="terminal-button maximize"></span>
+      </div>
+      <div class="terminal-title">Binary Tree Visualizer</div>
+    </div>
+    <div class="terminal-content">
+      <div class="controls">
+        <input type="number" id="nodeValue" placeholder="Enter node value">
+        <button onclick="addNode()">Add Node</button>
+        <button onclick="clearTree()">Clear Tree</button>
+      </div>
+      <div class="tree-container" id="treeContainer"></div>
+    </div>
   </div>
-  <div class="tree-container" id="treeContainer"></div>
-
   
   <script src="script.js"></script>
 </body>

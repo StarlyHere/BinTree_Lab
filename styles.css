@@ -1,46 +1,129 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Courier New', monospace;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #F9D689;
+  min-height: 100vh;
+  background-color: #2b2b2b;
 }
 
-h1 {
-  margin-top: 20px;
+.terminal {
+  width: 800px;
+  height: 600px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.terminal-header {
+  background-color: #323232;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 15px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.close {
+  background-color: #ff5f56;
+}
+
+.minimize {
+  background-color: #ffbd2e;
+}
+
+.maximize {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.terminal-content {
+  padding: 20px;
+  height: calc(100% - 80px);
+  overflow: auto;
 }
 
 .controls {
-  margin: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  outline: none;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+button {
+  background-color: #444;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #555;
 }
 
 .tree-container {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  height: calc(100% - 50px);
+  background-color: #2d2d2d;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .node {
   position: absolute;
   text-align: center;
   border-radius: 50%;
-  background-color: #973131;
-  color: white;
+  background-color: #61afef;
+  color: #fff;
   width: 40px;
   height: 40px;
   line-height: 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
   z-index: 2;
+  font-family: 'Courier New', monospace;
 }
 
 .line {
   position: absolute;
   height: 2px;
-  background-color: #333;
+  background-color: #4a4a4a;
   transform-origin: left center;
   z-index: 1;
 }
-
