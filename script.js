@@ -1,4 +1,3 @@
-// script.js
 class TreeNode {
   constructor(value) {
     this.value = value;
@@ -39,7 +38,6 @@ class BinaryTree {
 
 const tree = new BinaryTree();
 const treeContainer = document.getElementById("treeContainer");
-
 function getContainerWidth() {
   return treeContainer.getBoundingClientRect().width;
 }
@@ -98,17 +96,12 @@ function visualizeTree(node, x, y, parentX, parentY) {
   }
 
   treeContainer.appendChild(nodeElement);
-
-  // Adjust spacing based on the level depth
-  const level = Math.floor(y / 60);  // Calculate current level
-  const spacing = 0.15 / (level + 1);  // Reduce spacing as we go deeper
+  const level = Math.floor(y / 60); 
+  const spacing = 0.15 / (level + 1);
   const verticalSpacing = 60;
-  
   visualizeTree(node.left, x - spacing, y + verticalSpacing, x, y);
   visualizeTree(node.right, x + spacing, y + verticalSpacing, x, y);
 }
-
-// Handle container resize
 const resizeObserver = new ResizeObserver(() => {
   if (tree.root) {
     redrawTree();
